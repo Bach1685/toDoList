@@ -93,7 +93,14 @@ h6 {
   max-width: 500px;
 }
 
-.element {
+.button {
+  border-radius: 10%;
+  height: 50px;
+  font-size: 24px;
+  padding: 7px 9px;
+}
+
+.item {
   font-size: 30px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   background-color: aquamarine;
@@ -103,23 +110,11 @@ h6 {
   justify-content: space-between;
 }
 
-.element--done{
+.item--done{
   background-color: rgb(165, 165, 165);
 }
 
-.button {
-  border-radius: 50%;
-  height: 50px;
-  width: 50px;
-}
 
-.button--ok {
-  background: #52ec70;
-}
-
-.button--delete {
-  background: #f46157;
-}
 
 .form {
   width: 500px;

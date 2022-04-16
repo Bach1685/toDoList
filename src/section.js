@@ -1,4 +1,4 @@
-import { List } from "./list.js";
+import { List } from "./components/list";
 import { Element } from "./element.js";
 import { Form } from "./form.js";
 
@@ -17,7 +17,7 @@ export class Section {
     this.#list = new List();
     this.#form = new Form();
     
-    this.#html.append(this.#list.html);
+    this.#html.append(this.#list.getContent());
     this.#html.append(this.#form.html);
   }
 

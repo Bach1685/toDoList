@@ -1,4 +1,4 @@
-import { Button } from "./button.js";
+import { Button } from "./components/button";
 
 export class Element {
   #html;
@@ -32,8 +32,10 @@ export class Element {
     this.#html.dataset.id = this.#id;
     this.#html.dataset.isDone = false;
 
-    buttons.append(new Button(this.#id, "button--ok").html);
-    buttons.append(new Button(this.#id, "button--delete").html);
+
+
+    buttons.append(new Button({text: 'Hello', color: 'green', event: () => {console.log(12345)}}).getContent());
+    buttons.append(new Button({color: 'tomato', event: (e) => {console.log(e)}}).getContent());
 
     this.#value = value;
     this.#isDone = false;
