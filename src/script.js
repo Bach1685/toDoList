@@ -1,6 +1,4 @@
-import { Section } from "./section.js";
+import { Section } from "./components/section.js";
 
 let section = new Section();
-document.body.append(section.html);
-
-// section.activateListeners();
+document.body.append(section.getContent());

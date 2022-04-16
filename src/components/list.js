@@ -53,7 +53,11 @@ export class List extends HtmlElement {
   }
 
   add(text) {
-    this.list.push(new Item(text));
+    this.list.push(
+      new Item(text, () => {
+        this.render();
+      })
+    );
     this.render();
   }
 }
