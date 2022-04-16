@@ -1,14 +1,12 @@
 import { Button } from "./components/button";
 
-
-
 export class Form {
   #html;
   get html() {
     return this.#html;
   }
 
-  constructor() {
+  constructor(callback) {
     this.#html = document.createElement("div");
     this.#html.classList.add("form");
 
@@ -16,9 +14,15 @@ export class Form {
     input.classList.add("input");
     this.#html.append(input);
 
-    let button = document.createElement("button");
-    button.classList.add("button", "adding-button");
-    button.innerHTML = "Добавить";
-    this.#html.append(button);
+    let button = new Button({
+      text: "Добавить",
+      color: "grey",
+      event: () => {
+        callback(input.value);
+      },
+    });
+    button.getContent().classList.add("button", "adding-button");
+    button.getContent().innerHTML = "Добавить";
+    this.#html.append(button.getContent());
   }
 }

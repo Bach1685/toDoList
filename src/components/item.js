@@ -1,10 +1,9 @@
 import { Button } from "./button";
+import { HtmlElement } from "./htmlElement";
 
-export { Button } from "./button";
-
-export class Item {
+export class Item extends HtmlElement {
   constructor(text = "*", callback = () => {}) {
-    this.content = document.createElement("li");
+    super("li");
     this.content.classList.add("item");
     this.content.append((document.createElement("p").innerHTML = text));
     this.content.append(
@@ -29,10 +28,6 @@ export class Item {
     );
     this.isDone = false;
     this.isDelete = false;
-  }
-
-  getContent() {
-    return this.content;
   }
 
   isDone() {

@@ -1,8 +1,9 @@
 import { Item } from "./item";
+import { HtmlElement } from "./htmlElement";
 
-export class List {
+export class List extends HtmlElement {
   constructor() {
-    this.content = document.createElement("ol");
+    super("ol");
     this.list = [
       new Item("Пункт 1", () => {
         this.render();
@@ -37,6 +38,10 @@ export class List {
         return a.isDone - b.isDone;
       })
       .forEach((elem) => {
+        if (elem.isDone) {
+          elem.getContent().classList.add("item--done");
+        }
+
         this.content.append(elem.getContent());
       });
   }
@@ -46,6 +51,7 @@ export class List {
       this.content.removeChild(this.content.firstChild);
     }
   }
+
   add(text) {
     this.list.push(new Item(text));
     this.render();

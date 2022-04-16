@@ -15,8 +15,10 @@ export class Section {
     this.#html.classList.add("section");
 
     this.#list = new List();
-    this.#form = new Form();
-    
+    this.#form = new Form((text) => {
+      this.#list.add(text);
+    });
+
     this.#html.append(this.#list.getContent());
     this.#html.append(this.#form.html);
   }
